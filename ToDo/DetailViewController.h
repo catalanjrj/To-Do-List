@@ -10,7 +10,7 @@
 #import "MasterViewController.h"
 @interface DetailViewController : UIViewController
 
-@property (strong, nonatomic) id detailItem;
+@property (strong, nonatomic) NSManagedObject *detailItem;
 
 @property(weak,nonatomic) MasterViewController * masterVC;
 @property (weak, nonatomic) IBOutlet UITextField *detailTextField;

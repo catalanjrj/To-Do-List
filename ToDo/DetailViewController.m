@@ -34,6 +34,7 @@
 }
 
 - (void)viewDidLoad {
+    self.title = @"List";
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     [self configureView];
@@ -54,6 +55,14 @@
 //    NSDate *newDate = [dateFormatter dateFromString:dateString];
   
     [self.detailItem setValue:self.detailTextField.text forKey:@"title"];
+    NSError *error;
+    
+    if(![self.detailItem.managedObjectContext save:&error]){
+        
+        NSLog(@"Unresolved error %@ %@", error, [error userInfo]);
+        abort();
+    
+    }
 
      self.saveButton.enabled = NO;
      self.cancelButton.enabled = NO;
