@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
@@ -33,42 +34,62 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c7M-LL-r15">
-                                <rect key="frame" x="150" y="285" width="300" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title!!" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c7M-LL-r15">
+                                <rect key="frame" x="144" y="98" width="300" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GXe-UY-9Hj">
-                                <rect key="frame" x="410" y="323" width="34" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="34" id="PpH-SD-4E7"/>
-                                    <constraint firstAttribute="height" constant="30" id="t1K-iN-Cck"/>
-                                </constraints>
-                                <state key="normal" title="Save"/>
-                                <connections>
-                                    <action selector="saveButtonTapped:" destination="JEX-9P-axG" eventType="touchUpInside" id="rtk-H7-JzD"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fqK-qM-F2g">
-                                <rect key="frame" x="354" y="323" width="48" height="30"/>
-                                <state key="normal" title="Cancel">
-                                    <color key="titleColor" red="1" green="0.0" blue="0.0093617555427760735" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="cancelButtonTapped:" destination="JEX-9P-axG" eventType="touchUpInside" id="mpl-9G-Rfa"/>
-                                </connections>
-                            </button>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UiA-S3-q7o">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem style="plain" id="rHZ-sV-vX3">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="fqK-qM-F2g">
+                                            <rect key="frame" x="20" y="7" width="48" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" title="Cancel">
+                                                <color key="titleColor" red="1" green="0.0" blue="0.0093617555427760735" alpha="1" colorSpace="calibratedRGB"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="cancelButtonTapped:" destination="JEX-9P-axG" eventType="touchUpInside" id="mpl-9G-Rfa"/>
+                                            </connections>
+                                        </button>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" id="pHj-2S-opR">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="GXe-UY-9Hj">
+                                            <rect key="frame" x="78" y="7" width="34" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="34" id="PpH-SD-4E7"/>
+                                                <constraint firstAttribute="height" constant="30" id="t1K-iN-Cck"/>
+                                            </constraints>
+                                            <state key="normal" title="Save"/>
+                                            <connections>
+                                                <action selector="saveButtonTapped:" destination="JEX-9P-axG" eventType="touchUpInside" id="rtk-H7-JzD"/>
+                                            </connections>
+                                        </button>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" text="Start your List here!!" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="78x-kL-f2M">
+                                <rect key="frame" x="0.0" y="174" width="600" height="373"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="GXe-UY-9Hj" firstAttribute="baseline" secondItem="fqK-qM-F2g" secondAttribute="baseline" id="09t-XA-Pvu"/>
                             <constraint firstItem="c7M-LL-r15" firstAttribute="width" secondItem="svH-Pt-448" secondAttribute="width" multiplier="0.5" id="8mz-0i-qoh"/>
-                            <constraint firstItem="GXe-UY-9Hj" firstAttribute="top" secondItem="c7M-LL-r15" secondAttribute="bottom" constant="8" symbolic="YES" id="AOo-uC-ZPT"/>
-                            <constraint firstItem="c7M-LL-r15" firstAttribute="centerX" secondItem="svH-Pt-448" secondAttribute="centerX" id="JLL-mx-gtG"/>
+                            <constraint firstItem="78x-kL-f2M" firstAttribute="bottom" secondItem="GAO-Cl-Wes" secondAttribute="top" constant="-53" id="HFA-06-5hi"/>
+                            <constraint firstItem="c7M-LL-r15" firstAttribute="centerX" secondItem="svH-Pt-448" secondAttribute="centerX" constant="-6" id="JLL-mx-gtG"/>
+                            <constraint firstItem="UiA-S3-q7o" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leadingMargin" constant="-20" id="K1r-33-1QG"/>
+                            <constraint firstAttribute="trailing" secondItem="78x-kL-f2M" secondAttribute="trailing" id="MCV-rM-wSG"/>
                             <constraint firstItem="c7M-LL-r15" firstAttribute="width" secondItem="svH-Pt-448" secondAttribute="width" multiplier="0.5" id="MxR-Ea-qgd"/>
-                            <constraint firstItem="GXe-UY-9Hj" firstAttribute="leading" secondItem="fqK-qM-F2g" secondAttribute="trailing" constant="8" id="fQF-On-Uad"/>
-                            <constraint firstItem="GXe-UY-9Hj" firstAttribute="trailing" secondItem="c7M-LL-r15" secondAttribute="trailing" constant="-6" id="lmm-A1-59c"/>
-                            <constraint firstItem="c7M-LL-r15" firstAttribute="top" secondItem="SYR-Wa-9uf" secondAttribute="bottom" constant="221" id="pLO-hM-eZd"/>
+                            <constraint firstItem="UiA-S3-q7o" firstAttribute="bottom" secondItem="GAO-Cl-Wes" secondAttribute="top" id="Pxu-hi-7e5"/>
+                            <constraint firstItem="UiA-S3-q7o" firstAttribute="trailing" secondItem="78x-kL-f2M" secondAttribute="trailing" id="dP8-Jh-Z5S"/>
+                            <constraint firstItem="78x-kL-f2M" firstAttribute="top" secondItem="c7M-LL-r15" secondAttribute="bottom" constant="46" id="jN5-oX-cbj"/>
+                            <constraint firstItem="c7M-LL-r15" firstAttribute="top" secondItem="SYR-Wa-9uf" secondAttribute="bottom" constant="34" id="pLO-hM-eZd"/>
+                            <constraint firstItem="78x-kL-f2M" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leading" id="wqE-4t-ZrJ"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">

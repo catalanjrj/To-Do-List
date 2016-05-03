@@ -68,4 +68,15 @@
      self.cancelButton.enabled = NO;
     [self.masterVC detailChangedObject];
 }
+
+
+
+
+
+
+
+
+
+
+
 @end
