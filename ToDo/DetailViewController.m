@@ -30,14 +30,43 @@
     // Update the user interface for the detail item.
     if (self.detailItem) {
         self.detailTextField.text = [[self.detailItem valueForKey:@"title"]description];
+        
+        if(self.detailItem){
+            self.listTextView.text = [[self.detailItem valueForKey:@"list"]description];
+        }
     }
 }
 
 - (void)viewDidLoad {
     self.title = @"List";
+    
+    
+    
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-    [self configureView];
+    
+    [self.detailTextField endEditing:YES];
+    
+    _listTextView.delegate = self;
+}
+
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range
+ replacementText:(NSString *)text
+{
+    
+    if ([text isEqualToString:@"\n"]) {
+        
+        [textView resignFirstResponder];
+        // Return FALSE so that the final '\n' character doesn't get added
+        return NO;
+    }
+    // For any other character return TRUE so that the text gets added to the view
+    return YES;
+
+//    [self configureView];
+
+
+
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -53,16 +82,19 @@
 //    NSDateFormatter *dateFormatter =[[NSDateFormatter alloc]init];
 //    [dateFormatter setDateFormat: @"yyyy-mm-dd HH: mm: ss +0000"];
 //    NSDate *newDate = [dateFormatter dateFromString:dateString];
-  
+    [self.detailItem setValue:self.listTextView forKey:@"list"];
     [self.detailItem setValue:self.detailTextField.text forKey:@"title"];
     NSError *error;
     
-    if(![self.detailItem.managedObjectContext save:&error]){
-        
-        NSLog(@"Unresolved error %@ %@", error, [error userInfo]);
-        abort();
     
-    }
+    if(![self.detailItem.managedObjectContext save:&error]){
+            NSLog(@"Unresolved error %@ %@",error, [error userInfo]);
+        
+        }
+
+    
+
+
 
      self.saveButton.enabled = NO;
      self.cancelButton.enabled = NO;

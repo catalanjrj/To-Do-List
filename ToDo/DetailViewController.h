@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "MasterViewController.h"
-@interface DetailViewController : UIViewController
+@interface DetailViewController : UIViewController<UITextViewDelegate>
 
 @property (strong, nonatomic) NSManagedObject *detailItem;
 
@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *detailTextField;
 @property (weak, nonatomic) IBOutlet UIButton *cancelButton;
 @property (weak, nonatomic) IBOutlet UIButton *saveButton;
+@property (weak,nonatomic)IBOutlet UITextView *listTextView;
 
 
 @end
