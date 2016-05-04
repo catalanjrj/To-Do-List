@@ -40,7 +40,7 @@
 
 - (void)viewDidLoad {
     self.title = @"List";
-    
+    [self.detailTextField resignFirstResponder];
     self.listTextView.delegate = self;
     
     [super viewDidLoad];
