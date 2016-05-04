@@ -29,6 +29,8 @@
 - (void)configureView {
     // Update the user interface for the detail item.
     if (self.detailItem) {
+        
+        self.dueDate.text = [[self.detailItem valueForKey:@"timeStamp"]description];
         self.detailTextField.text = [[self.detailItem valueForKey:@"title"]description];
             self.listTextView.text = [self.detailItem valueForKey:@"list"];
                                       }}
@@ -59,12 +61,14 @@
 
 }
 -(IBAction)saveButtonTapped:(UIButton*)sender{
-//    NSString *dateString = self.detailTextField.text;
-//    NSDateFormatter *dateFormatter =[[NSDateFormatter alloc]init];
-//    [dateFormatter setDateFormat: @"yyyy-mm-dd HH: mm: ss +0000"];
-//    NSDate *newDate = [dateFormatter dateFromString:dateString];
+    NSString *dateString = self.detailTextField.text;
+    NSDateFormatter *dateFormatter =[[NSDateFormatter alloc]init];
+    [dateFormatter setDateFormat: @"mm-dd-yyyy HH: mm"];
+    NSDate *newDate = [dateFormatter dateFromString:dateString];
+    
     [self.detailItem setValue:self.listTextView.text forKey:@"list"];
     [self.detailItem setValue:self.detailTextField.text forKey:@"title"];
+   
     NSError *error;
     
     

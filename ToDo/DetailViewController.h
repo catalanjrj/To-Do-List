@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *saveButton;
 @property (weak,nonatomic)IBOutlet UITextView *listTextView;
 
+@property (weak, nonatomic) IBOutlet UITextField *dueDate;
 
 @end
 
