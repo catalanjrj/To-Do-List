@@ -63,18 +63,28 @@
                                                 <constraint firstAttribute="height" constant="30" id="t1K-iN-Cck"/>
                                             </constraints>
                                             <state key="normal" title="Save"/>
-                                            <connections>
-                                                <action selector="saveButtonTapped:" destination="JEX-9P-axG" eventType="touchUpInside" id="rtk-H7-JzD"/>
-                                            </connections>
                                         </button>
                                     </barButtonItem>
                                 </items>
+                                <connections>
+                                    <outlet property="delegate" destination="78x-kL-f2M" id="g6L-Va-5JG"/>
+                                </connections>
                             </toolbar>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fnW-Fp-362">
+                                <rect key="frame" x="452" y="97" width="37" height="30"/>
+                                <state key="normal" title="SAVE"/>
+                                <connections>
+                                    <action selector="saveButtonTapped:" destination="JEX-9P-axG" eventType="touchUpInside" id="ShB-VW-POk"/>
+                                </connections>
+                            </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" text="Start your List here!!" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="78x-kL-f2M">
                                 <rect key="frame" x="0.0" y="174" width="600" height="373"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <connections>
+                                    <outlet property="delegate" destination="svH-Pt-448" id="vGC-XA-afq"/>
+                                </connections>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -86,7 +96,9 @@
                             <constraint firstAttribute="trailing" secondItem="78x-kL-f2M" secondAttribute="trailing" id="MCV-rM-wSG"/>
                             <constraint firstItem="c7M-LL-r15" firstAttribute="width" secondItem="svH-Pt-448" secondAttribute="width" multiplier="0.5" id="MxR-Ea-qgd"/>
                             <constraint firstItem="UiA-S3-q7o" firstAttribute="bottom" secondItem="GAO-Cl-Wes" secondAttribute="top" id="Pxu-hi-7e5"/>
+                            <constraint firstItem="fnW-Fp-362" firstAttribute="top" secondItem="SYR-Wa-9uf" secondAttribute="bottom" constant="33" id="Sis-4l-fE1"/>
                             <constraint firstItem="UiA-S3-q7o" firstAttribute="trailing" secondItem="78x-kL-f2M" secondAttribute="trailing" id="dP8-Jh-Z5S"/>
+                            <constraint firstItem="fnW-Fp-362" firstAttribute="leading" secondItem="c7M-LL-r15" secondAttribute="trailing" constant="8" id="hM9-25-fFT"/>
                             <constraint firstItem="78x-kL-f2M" firstAttribute="top" secondItem="c7M-LL-r15" secondAttribute="bottom" constant="46" id="jN5-oX-cbj"/>
                             <constraint firstItem="c7M-LL-r15" firstAttribute="top" secondItem="SYR-Wa-9uf" secondAttribute="bottom" constant="34" id="pLO-hM-eZd"/>
                             <constraint firstItem="78x-kL-f2M" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leading" id="wqE-4t-ZrJ"/>
