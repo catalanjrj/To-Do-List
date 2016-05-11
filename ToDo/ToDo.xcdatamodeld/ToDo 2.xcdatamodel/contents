@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10171" systemVersion="15E65" minimumToolsVersion="Automatic">
-    <entity name="Person" representedClassName="Person" syncable="YES">
+    <entity name="Person" syncable="YES">
         <attribute name="age" optional="YES" attributeType="Integer 64" syncable="YES"/>
         <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="image" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="assignment" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ToDo" inverseName="assignee" inverseEntity="ToDo" syncable="YES"/>
         <relationship name="children" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Person" inverseName="father" inverseEntity="Person" syncable="YES"/>
         <relationship name="father" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Person" inverseName="children" inverseEntity="Person" syncable="YES"/>
         <relationship name="spouse" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Person" inverseName="spouse" inverseEntity="Person" syncable="YES"/>
     </entity>
-    <entity name="ToDo" representedClassName="ToDo" syncable="YES">
+    <entity name="ToDo" syncable="YES">
         <attribute name="done" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="list" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="timeStamp" optional="YES" attributeType="Date" syncable="YES"/>
@@ -18,7 +17,7 @@
         <relationship name="assignee" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Person" inverseName="assignment" inverseEntity="Person" syncable="YES"/>
     </entity>
     <elements>
+        <element name="Person" positionX="423" positionY="225" width="128" height="150"/>
         <element name="ToDo" positionX="421" positionY="191" width="128" height="120"/>
-        <element name="Person" positionX="423" positionY="225" width="128" height="165"/>
     </elements>
 </model>

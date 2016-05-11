@@ -8,9 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "MasterViewController.h"
-@interface DetailViewController : UIViewController<UITextViewDelegate>
+#import "ToDo.h"
+@interface DetailViewController : UIViewController<UITextViewDelegate,NSFetchedResultsControllerDelegate>
 
-@property (strong, nonatomic) NSManagedObject *detailItem;
+@property (strong, nonatomic) ToDo *detailItem;
 
 @property(weak,nonatomic) MasterViewController * masterVC;
 @property (weak, nonatomic) IBOutlet UITextField *detailTextField;
@@ -19,6 +20,10 @@
 @property (weak,nonatomic)IBOutlet UITextView *listTextView;
 
 @property (weak, nonatomic) IBOutlet UITextField *dueDate;
+
+
+@property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
+@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
 @end
 

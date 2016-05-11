@@ -91,17 +91,26 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QCt-m8-ZPx">
+                                <rect key="frame" x="200" y="72" width="151" height="30"/>
+                                <state key="normal" title="Do Some People Stuff"/>
+                                <connections>
+                                    <action selector="ImAPeoplePerson:" destination="JEX-9P-axG" eventType="touchUpInside" id="MVG-QO-7V7"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="QxY-dt-zAc" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leadingMargin" constant="-8" id="0Cq-NF-Xod"/>
                             <constraint firstItem="c7M-LL-r15" firstAttribute="width" secondItem="svH-Pt-448" secondAttribute="width" multiplier="0.5" id="8mz-0i-qoh"/>
+                            <constraint firstItem="QCt-m8-ZPx" firstAttribute="top" secondItem="SYR-Wa-9uf" secondAttribute="bottom" constant="8" symbolic="YES" id="BZg-e5-6G9"/>
                             <constraint firstItem="78x-kL-f2M" firstAttribute="bottom" secondItem="GAO-Cl-Wes" secondAttribute="top" constant="-53" id="HFA-06-5hi"/>
                             <constraint firstItem="c7M-LL-r15" firstAttribute="centerX" secondItem="svH-Pt-448" secondAttribute="centerX" constant="-6" id="JLL-mx-gtG"/>
                             <constraint firstItem="UiA-S3-q7o" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leadingMargin" constant="-20" id="K1r-33-1QG"/>
                             <constraint firstAttribute="trailing" secondItem="78x-kL-f2M" secondAttribute="trailing" id="MCV-rM-wSG"/>
                             <constraint firstItem="c7M-LL-r15" firstAttribute="width" secondItem="svH-Pt-448" secondAttribute="width" multiplier="0.5" id="MxR-Ea-qgd"/>
                             <constraint firstItem="UiA-S3-q7o" firstAttribute="bottom" secondItem="GAO-Cl-Wes" secondAttribute="top" id="Pxu-hi-7e5"/>
+                            <constraint firstItem="QCt-m8-ZPx" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leading" constant="200" id="RCN-RJ-85Q"/>
                             <constraint firstItem="UiA-S3-q7o" firstAttribute="trailing" secondItem="78x-kL-f2M" secondAttribute="trailing" id="dP8-Jh-Z5S"/>
                             <constraint firstItem="78x-kL-f2M" firstAttribute="top" secondItem="c7M-LL-r15" secondAttribute="bottom" constant="46" id="jN5-oX-cbj"/>
                             <constraint firstItem="QxY-dt-zAc" firstAttribute="top" secondItem="c7M-LL-r15" secondAttribute="bottom" constant="8" symbolic="YES" id="m1y-pW-glG"/>
